@@ -65,7 +65,7 @@ pages:
   # Cache: /framework/cache.md
   # Components: /framework/components.md
   # Database: /framework/database.md
-  - Schema definition: framework/schema-definition.md
+  - Database Schema: framework/database/xml.md
   # Resources: /framework/resources.md
   - Upgrade Reference: framework/upgrade.md
   # Other Reference:

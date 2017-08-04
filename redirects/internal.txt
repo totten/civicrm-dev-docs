@@ -1,5 +1,6 @@
 dev-tools/debugging tools/debugging
 extend-stages extensions/lifecycle
+framework/schema-definition.md framework/database/xml.md
 markdownrules documentation/markdown
 best-practices/documentation-style-guide documentation/style-guide
 extensions/basics extensions
