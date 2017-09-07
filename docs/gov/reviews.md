@@ -20,8 +20,8 @@ reduces the risk of bias by incorporating an outside perspective.
 
 Depending on the Threshold, the minimum diversity requirement may mean:
 
- * __Author-Reviewer__: The review must be done by someone other than the original author.
- * __Author-Authority__: The authority must be provided by someone other than the original author.
+ * __Author!=Reviewer__: The review must be done by someone other than the original author.
+ * __Author!=Authority__: The authority must be provided by someone other than the original author.
  * __3x__: At least three people (including the author) must indicate support for the PR.
 
 ### Minimum Authority
@@ -46,13 +46,13 @@ Now:
  * Suppose Alice proposes a Drop-in Change (DIC) to CiviContribute. Bob reviews and agrees with merging the PR. Should he merge it?
     * The requirement for "Minimum Notification" is not-applicable. So yes.
     * The requirement for "Minimum Authority" specifies "Specialist". This is met by either  Bob's authority ("Comprehensive Specialist") or Alice's authority ("CiviContribute Principal"). So yes.
-    * The requirement for "Minimum Diversity" specifies "Author-Reviewer". This is met by Bob's involvement. So yes.
+    * The requirement for "Minimum Diversity" specifies "Author!=Reviewer". This is met by Bob's involvement. So yes.
     * Conclusion: yes
  * Suppose Alice proposes a Minor Change (MNC) to CiviContribute and she `@mentions` Bob and Carol. Bob reviews, agrees, and waits a couple days in case Carol has feedback. Should he merge it?
     * The requirement for "Minimum Notification" specifies two `@mentions`. This was met. So yes.
     * The requirement for "Minimum Authority" specifies "Fellow". This cannot be met by Bob's authority ("Comprehensive Specialist"), but it could be met by Alice's authority ("CiviContribute Principal"). So yes.
-    * The requirement for "Minimum Diversity" specifies "Author-Reviewer". This is met by Bob's involvement. So yes.
-    * The requirement for "Minimum Diversity" specifies "Author-Authority". The only sufficient authority came from the author (Alice), so **no**.
+    * The requirement for "Minimum Diversity" specifies "Author!=Reviewer". This is met by Bob's involvement. So yes.
+    * The requirement for "Minimum Diversity" specifies "Author!=Authority". The only sufficient authority came from the author (Alice), so **no**.
     * Conclusion: no
     * However...  there are a couple ways to get it approved.  Either (a) they can wait for Carol to give positive feedback or (b) Alice
       can invoke her authority as a "Principal" and document special circumstances justifying an exception.  (Ex: "This fixes a critical

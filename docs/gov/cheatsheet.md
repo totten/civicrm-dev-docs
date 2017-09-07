@@ -9,10 +9,10 @@ For primary repos:
 
 | Threshold                     | Minimum Notification  | Minimum Diversity     | Minimum Authority  |
 | ----------------------------- | --------------------- | --------------------- | ------------------ |
-| Non-Functional Change (NFC)   | N/A                   | Author-Reviewer       | N/A                |
-| Drop-In Change (DIC)          | N/A                   | Author-Reviewer       | Specialist         |
-| Minor Change (MNC)            | At least two relevant experts | Author-Reviewer<br/>Author-Authority | Fellow
-| Major Change (MJC)            | All relevant experts<br/>(If none defined, then 2+ Principals)<br/>(Plus: Pre-release notice to `civicrm-dev`) |Author-Reviewer<br/>Author-Authority | Principal
+| Non-Functional Change (NFC)   | N/A                   | Author!=Reviewer       | N/A                |
+| Drop-In Change (DIC)          | N/A                   | Author!=Reviewer       | Specialist         |
+| Minor Change (MNC)            | At least two relevant experts | Author!=Reviewer<br/>Author!=Authority | Fellow
+| Major Change (MJC)            | All relevant experts<br/>(If none defined, then 2+ Principals)<br/>(Plus: Pre-release notice to `civicrm-dev`) |Author!=Reviewer<br/>Author!=Authority | Principal
 
 For related repos:
 
