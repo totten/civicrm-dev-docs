@@ -155,6 +155,7 @@ nav:
     - hook_civicrm_validateForm: hooks/hook_civicrm_validateForm.md
   - GUI Hooks:
     - hook_civicrm_activeTheme: hooks/hook_civicrm_activeTheme.md
+    - hook_civicrm_alterBundle: hooks/hook_civicrm_alterBundle.md
     - hook_civicrm_alterCustomFieldDisplayValue: hooks/hook_civicrm_alterCustomFieldDisplayValue.md
     - hook_civicrm_alterEntityRefParams: hooks/hook_civicrm_alterEntityRefParams.md
     - hook_civicrm_alterMenu: hooks/hook_civicrm_alterMenu.md
