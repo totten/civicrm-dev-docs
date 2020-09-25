@@ -200,7 +200,7 @@ CRM.api3(params).then(function(result) {
 
 The AJAX interface is automatically available for web-pages generated through CiviCRM (such as standard CiviCRM web-pages, CiviCRM extensions and custom CiviCRM templates).
 
-The AJAX interface could be made available to other parts of the same website (e.g. a Drupal module or WordPress widget) by calling `CRM_Core_Resources::singleton()->addCoreResources()`
+The AJAX interface could be made available to other parts of the same website (e.g. a Drupal module or WordPress widget) by calling `Civi::resources()->addCoreResources()`
 from php. Please note that the AJAX interface is subject to [API Security](../../security/permissions.md#api-permissions)
 and [Same Origin Policy](http://en.wikipedia.org/wiki/Same_origin_policy). To use it from an external site or application, see the REST interface documentation.
 

@@ -67,12 +67,12 @@ CiviCRM contains a Resource controller which allows extensions to add in .js fil
 An Example of adding in a file called bar.js from the extension com.example.foo
 
 ```php
-CRM_Core_Resources::singleton()->addScriptFile('com.example.foo', 'bar.js');
+Civi::resources()->addScriptFile('com.example.foo', 'bar.js');
 ```
 
 You can also use CRM_Core_Resources to add in inline scripts such as the following
 ```php
-CRM_Core_Resources::singleton()->addScript('alert("hello");');
+Civi::resources()->addScript('alert("hello");');
 ```
 
 You can also specify other regions of the page to place the script in (the most common reason for this is because jQuery plugins must be added to the "html-header" region). See [Resource Reference](../framework/resources.md) for more details.
@@ -83,7 +83,7 @@ If you are working outside the context of CiviCRM pages (e.g. on a Drupal page, 
 
 ```php
 civicrm_initialize();
-$manager = CRM_Core_Resources::singleton();
+$manager = Civi::resources();
 $manager->addCoreResources();
 $manager->addScriptUrl(WP_PLUGIN_URL . '/myplugin/myscript.js', 1, 'html-header');
 ```
@@ -129,7 +129,7 @@ Just as you can dynamically add scripts to the page you can also add variables. 
 
 ```php
 // On the Server:
-CRM_Core_Resources::singleton()->addVars('myNamespace', array('foo' => 'bar'));
+Civi::resources()->addVars('myNamespace', array('foo' => 'bar'));
 ```
 
 ```javascript

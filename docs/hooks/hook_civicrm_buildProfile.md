@@ -19,7 +19,7 @@ buildProfile($profileName)
 ```php
 function myext_civicrm_buildProfile($profileName) {
   if ($profileName === 'MyTargetedProfile) {
-    CRM_Core_Resources::singleton()->addScriptFile('org.example.myext', 'some/fancy.js', 100);
+    Civi::resources()->addScriptFile('org.example.myext', 'some/fancy.js', 100);
   }
 }
 ```

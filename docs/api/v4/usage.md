@@ -116,7 +116,7 @@ CRM.api4('Contact', 'get', {
 ```
 
 !!! tip
-    The AJAX interface could be made available to other parts of the same website (e.g. a Drupal module or WordPress widget) by calling `#!php CRM_Core_Resources::singleton()->addCoreResources()`
+    The AJAX interface could be made available to other parts of the same website (e.g. a Drupal module or WordPress widget) by calling `#!php Civi::resources()->addCoreResources()`
     from PHP. Please note that the AJAX interface is subject to [API Security](../../security/permissions.md#api-permissions)
     and [Same Origin Policy](http://en.wikipedia.org/wiki/Same_origin_policy). To use it from an external site or application, see REST interface documentation.
 

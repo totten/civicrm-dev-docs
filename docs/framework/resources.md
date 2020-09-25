@@ -21,9 +21,9 @@ The following examples load Javascript into the page footer. This is the default
 
 Language | Example | Example code |
 --- | --- | --- |
-PHP | Add a Javascript file provided by an extension | `CRM_Core_Resources::singleton()->addScriptFile('com.example.foo', 'bar.js');` |
-PHP | Add an external Javascript file | `CRM_Core_Resources::singleton()->addScriptUrl('http://www.example.com/bar.js');` |
-PHP | Add raw Javascript code | `CRM_Core_Resources::singleton()->addScript('alert("hello");');` |
+PHP | Add a Javascript file provided by an extension | `Civi::resources()->addScriptFile('com.example.foo', 'bar.js');` |
+PHP | Add an external Javascript file | `Civi::resources()->addScriptUrl('http://www.example.com/bar.js');` |
+PHP | Add raw Javascript code | `Civi::resources()->addScript('alert("hello");');` |
 Smarty | Add a Javascript file provided by an extension | `{crmScript ext=com.example.foo file=bar.js}` |
 Smarty | Add an external Javascript file | `{crmScript url="http://www.example.com/bar.js"}` |
 
@@ -33,7 +33,7 @@ If you need to export runtime data for use with JavaScript, then you can registe
 
 ```php
 // On the server:
-CRM_Core_Resources::singleton()->addVars('myNamespace', array('foo' => 'bar'));
+Civi::resources()->addVars('myNamespace', array('foo' => 'bar'));
 ```
 
 ```javascript
@@ -47,9 +47,9 @@ More infomation can be found in the [Javascript reference](../standards/javascri
 
 Language | Example | Example code |
 --- | --- | --- |
-PHP | Add a CSS file provided by an extension | `CRM_Core_Resources::singleton()->addStyleFile('com.example.foo', 'bar.css');` |
-PHP | Add an external CSS file | `CRM_Core_Resources::singleton()->addStyleUrl('http://www.example.com/bar.css');` |
-PHP | Add raw CSS code | `CRM_Core_Resources::singleton()->addStyle('body { background: black; }');` |
+PHP | Add a CSS file provided by an extension | `Civi::resources()->addStyleFile('com.example.foo', 'bar.css');` |
+PHP | Add an external CSS file | `Civi::resources()->addStyleUrl('http://www.example.com/bar.css');` |
+PHP | Add raw CSS code | `Civi::resources()->addStyle('body { background: black; }');` |
 Smarty | Add a CSS file provided by an extension | `{crmStyle ext=com.example.foo file=bar.css}` |
 Smarty | Add an external CSS file | `{crmStyle url="http://www.example.com/bar.css"}` |
 
@@ -59,8 +59,8 @@ If you need to reference any other kind of resource (such as image or sound file
 
 | Language | Example | Example Code |
 --- | --- | --- |
-PHP | Get an image URL | `CRM_Core_Resources::singleton()->getUrl('com.example.foo', 'bar.png');` |
-PHP | Get an extension's base URL | `CRM_Core_Resources::singleton()->getUrl('com.example.bar');` |
+PHP | Get an image URL | `Civi::resources()->getUrl('com.example.foo', 'bar.png');` |
+PHP | Get an extension's base URL | `Civi::resources()->getUrl('com.example.bar');` |
 Smarty | Get an image URL | `{crmResURL ext=com.example.foo file=bar.png}` |
 Smarty | Get an extension's base URL | `{crmResURL ext=com.example.foo }` |
 
@@ -81,8 +81,8 @@ When including Javascript files or CSS files in the HTML `<head>`, the exact pla
 For PHP APIs (`addScriptFile()`, `addScriptUrl()`, etc), the `$weight` and `$region` are optional function arguments which you may tack onto the end of each function call:
 
 ```php
-CRM_Core_Resources::singleton()->addScriptFile('com.example.foo', 'jquery.bar.js', 10, 'html-header');
-CRM_Core_Resources::singleton()->addScriptUrl('http://example.com/bar.css', 10, 'page-header');
+Civi::resources()->addScriptFile('com.example.foo', 'jquery.bar.js', 10, 'html-header');
+Civi::resources()->addScriptUrl('http://example.com/bar.css', 10, 'page-header');
 ```
 
 For Smarty APIs (`{crmScript}` and `{crmStyle}`), the optional weight and region parameters may also be added:

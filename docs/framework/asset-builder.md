@@ -217,14 +217,14 @@ Now we can use our newly defined asset in place of a static css file in `myexten
 function myextension_civicrm_coreResourceList(&$list, $region) {
    ...
    // To include the file without any processing we could use:
-   // CRM_Core_Resources::singleton()->addStyleFile('org.example.myextension', 'css/my_css.css');
+   // Civi::resources()->addStyleFile('org.example.myextension', 'css/my_css.css');
    // replace that with the following:
 
    // use the asset_builder service to get the url of an asset labeled 'mycss.css'
    $url = \Civi::service('asset_builder')->getUrl('mycss.css');
 
    // load the processed style on the page
-   CRM_Core_Resources::singleton()->addStyleUrl($url);
+   Civi::resources()->addStyleUrl($url);
 }
 ```
 

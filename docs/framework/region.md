@@ -129,10 +129,10 @@ The HTML `<HEAD>` is a critical part of any HTML document, and most frameworks p
 ### General Design
 
 - Registering resources
-  - All CiviCRM code (either in core or extensions) registers Javascript and CSS resources using the Resource API. (`CRM_Core_Resources::singleton()->addScriptUrl(...)`).
+  - All CiviCRM code (either in core or extensions) registers Javascript and CSS resources using the Resource API. (`Civi::resources()->addScriptUrl(...)`).
   - The Resource API builds on top of the Region API. Resources may be added to the "html-header" region – or to any other region. (We focus on "html-header" because it's special.)
   - A list of resources accumulates inside `CRM_Core_Region::instance('html-header')`
-  - There is a list of standard resources that are registered on (almost) every CiviCRM page. The list is generated  by `CRM_Core_Resources::singleton()->addCoreResources()` and `CRM/common/jquery.files.tpl`. (Note: The `addCoreResources()` function provides a very coarse-grained way to register resources and often loads scripts unnecessarily. It should eventually be replaced by something more fine-grained.)
+  - There is a list of standard resources that are registered on (almost) every CiviCRM page. The list is generated  by `Civi::resources()->addCoreResources()` and `CRM/common/jquery.files.tpl`. (Note: The `addCoreResources()` function provides a very coarse-grained way to register resources and often loads scripts unnecessarily. It should eventually be replaced by something more fine-grained.)
 - Rendering resources
   - In each CMS, we identify a hook that (a) runs for every page request, (b) runs after the primary Civi code, but (c) runs before the final rendering of the HTML `<HEAD>`. For example, in Drupal 7, `hook_page_build` provides this; in WordPress, the `wp_head` action provides this.
   - In that hook, we check to see if CiviCRM has bootstrapped for any reason. If so, then we render the region (`CRM_Core_Region::instance('html-header')->render()`) and output it using CMS-appropriate techniques. If CiviCRM hasn't bootstrapped, then we don't do anything.
